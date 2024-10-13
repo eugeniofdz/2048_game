@@ -206,6 +206,7 @@ def clear_screen():
 
 
 def print_grid(mat):
+    print("2048")
     print("+----+----+----+----+")  # Top border
     for row in mat:
         row_str = "|".join(f"{num:^4}" if num != 0 else "    " for num in row)  # Center-align each number
