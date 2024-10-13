@@ -5,8 +5,6 @@ if __name__ == '__main__':
     mat = logic.start_game()
 
     #User choices
-
-    print('this is  a branch test')
     
     while True:
         logic.clear_screen()
