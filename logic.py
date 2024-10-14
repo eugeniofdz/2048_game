@@ -63,34 +63,30 @@ def game_state(mat):
 
 
 def compress(mat):
-
-    #position to compress
-    pos = 0
-
-    #True if there is a change
+    # True if there is a change
     changed = False
 
-    #New mat to return
-    new_mat = [[0,0,0,0],
-               [0,0,0,0],
-               [0,0,0,0],
-               [0,0,0,0]]
+    # New matrix to return
+    new_mat = [[0, 0, 0, 0],
+               [0, 0, 0, 0],
+               [0, 0, 0, 0],
+               [0, 0, 0, 0]]
 
     for i in range(4):
-        #Reset position to 0 for next row
-        pos = 0
+        pos = 0  # Reset position to 0 for each row
         for j in range(4):
-            #If there is a num change it to the correct position
             if mat[i][j] != 0:
-                #compress left
+                # Move the number to the new compressed position
                 new_mat[i][pos] = mat[i][j]
-
-                pos += 1
-                #To prevent if number is already in the correct position
-                if j != pos:
+                
+                # If the number was moved to a different position, mark as changed
+                if j != pos:  # Only mark as changed if position has shifted
                     changed = True
+                
+                pos += 1
 
     return new_mat, changed
+
 
 
 def mergere(mat):
